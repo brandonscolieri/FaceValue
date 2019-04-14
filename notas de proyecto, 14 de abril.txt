@@ -1,0 +1,13 @@
+Notes about project so far:
+
+1) AffectNet: both categorial and dimensional models covered
+  a) Eleven categories that images can fall under:
+    * Seven facial emotions
+    * Neutral, None, Uncertain, and Non-face categories
+  b) Valence and Arousal Annotation
+    * x, y, axes are valence and arousal, respectively
+2) Over 1 million images
+  a) Information for the images are located in CSV files
+    * Includes info such as file path, face location, etc.
+    * Expression category, valence, and arousal labeled
+  b) In their paper, they cropped and resized to 256 * 256
