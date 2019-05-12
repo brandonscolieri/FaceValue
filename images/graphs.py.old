@@ -1,0 +1,203 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[2]:
+
+
+import numpy as np
+import pandas as pd
+import sys
+import os
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+
+# In[3]:
+
+
+col_names = ['epochs', 'time', 'loss', 'acc', 'val_loss', 'val_acc']
+df_worst = pd.read_csv('worst_model.csv', delimiter=',', names=col_names)
+df_second_best = pd.read_csv('second_best_model.csv', delimiter=',', names=col_names)
+df_best = pd.read_csv('best_models_points_to_plot.csv', delimiter=',', names=col_names)
+
+# Remove columns that are useless
+worst = df_worst.drop(df_worst.index[0])
+second_worst = df_second_best.drop(df_second_best.index[0])
+best = df_best.drop([df_best.index[0], df_best.index[-1]])
+
+
+# In[4]:
+
+
+# Helper function to change strings in columns to numeric datatypes
+
+def _numeric_helper(dataframe, cols_to_change):
+    for i in cols_to_change:
+        dataframe[i] = pd.to_numeric(dataframe[i])
+    return dataframe
+
+
+# In[5]:
+
+
+# Cast to proper types
+datatype_dict = {'epochs': np.uint8, 'loss': np.float64, 'acc': np.float64, 'val_loss': np.float64, 'val_acc': np.float64}
+
+df_w = _numeric_helper(worst, datatype_dict)
+df_2w = _numeric_helper(second_worst, datatype_dict)
+df_b = _numeric_helper(best, datatype_dict)
+
+
+# In[6]:
+
+
+# # Helper function
+
+# def _helper(dataframe, cols):
+#     return (dataframe.loc[:, col].to_numpy() for col in cols)
+
+
+# # ## Plots for worst model
+
+# # In[7]:
+
+
+# # epochs_worst, _, loss_worst, acc_worst, val_loss_worst, val_acc_worst = _helper(worst, col_names)
+# # plt.axes()
+# # plt.yticks(np.arange(0, 4, step=0.2))
+# # plt.plot(epochs_worst, loss_worst, label='training')
+# # plt.plot(epochs_worst, val_loss_worst, label='validation')
+# # plt.xlabel('epochs')
+# # plt.ylabel('loss')
+# # plt.title('Loss of worst model')
+# # plt.legend()
+# # plt.show()
+# sns.lineplot(x='epochs', y='loss', data=df_w)
+# plt.title('Training loss for worst model')
+# plt.show()
+# sns.lineplot(x='epochs', y='val_loss', data=df_w)
+# plt.title('Validation loss for worst model')
+# plt.show()
+
+
+# # In[8]:
+
+
+# # plt.plot(epochs_worst, acc_worst, label='training')
+# # plt.plot(epochs_worst, val_acc_worst, label='validation')
+# # plt.xlabel('epochs')
+# # plt.ylabel('accuracy')
+# # plt.title('Accuracies of worst model')
+# # plt.legend()
+# # plt.show()
+
+# gr = sns.lineplot(x='epochs', y='acc', data=df_w)
+# plt.title('Training accuracy for worst model')
+# plt.show()
+# gr = sns.lineplot(x='epochs', y='val_acc', data=df_w)
+# plt.title('Validation accuracy for worst model')
+# plt.show()
+
+
+# # ## Plots for second-worst model
+
+# # In[9]:
+
+
+# sns.lineplot(x='epochs', y='loss', data=df_2w)
+# plt.title('Training loss for second worst model')
+# plt.show()
+# sns.lineplot(x='epochs', y='val_loss', data=df_2w)
+# plt.title('Validation loss for second worst model')
+# plt.show()
+
+
+# # In[10]:
+
+
+# sns.lineplot(x='epochs', y='acc', data=df_2w)
+# plt.title('Training accuracy for second worst model')
+# plt.show()
+# sns.lineplot(x='epochs', y='val_acc', data=df_2w)
+# plt.title('Validation accuracy for second worst model')
+# plt.show()
+
+
+# #  ## Plots for best model
+
+# # In[11]:
+
+
+# sns.lineplot(x='epochs', y='loss', data=df_b)
+# plt.title('Training loss for best model')
+# plt.show()
+# sns.lineplot(x='epochs', y='val_loss', data=df_b)
+# plt.title('Validation loss for best model')
+# plt.show()
+
+
+# # In[12]:
+
+
+# sns.lineplot(x='epochs', y='acc', data=df_b)
+# plt.title('Training accuracy for best model')
+# plt.show()
+# sns.lineplot(x='epochs', y='val_acc', data=df_b)
+# plt.title('Validation accuracy for best model')
+# plt.show()
+
+
+# ## Aggregate plots for all models
+
+# In[26]:
+
+
+# labels used in legend
+legend_lb = ('training loss', 'validation loss', 'training accuracy', 'validation accuracy')
+
+
+# In[31]:
+
+
+fig, (ax) = plt.subplots()
+ax.plot('epochs', 'loss', data=df_w)
+ax.plot('epochs', 'val_loss', data=df_w)
+ax.plot('epochs', 'acc', data=df_w)
+ax.plot('epochs', 'val_acc', data=df_w)
+ax.set_title('Accuracy and Loss for Model 1')
+ax.set_xlabel('epochs')
+ax.set_ylabel('accuracy / loss')
+fig.legend(labels=legend_lb, loc=5, bbox_to_anchor=(1, 0.5))
+fig.subplots_adjust(right=0.75)  
+plt.show()
+
+
+# In[33]:
+
+
+plt.plot('epochs', 'loss', data=df_2w)
+plt.plot('epochs', 'val_loss', data=df_2w)
+plt.plot('epochs', 'acc', data=df_2w)
+plt.plot('epochs', 'val_acc', data=df_2w)
+plt.title('Accuracy and Loss for Model 2')
+plt.xlabel('epochs')
+plt.ylabel('accuracy / loss')
+plt.legend(labels=legend_lb, loc=5, bbox_to_anchor=(1.45, 0.5))
+plt.tight_layout(rect=[0,0,1.25,1])
+plt.show()
+
+
+# In[34]:
+
+
+plt.plot('epochs', 'loss', data=df_b)
+plt.plot('epochs', 'val_loss', data=df_b)
+plt.plot('epochs', 'acc', data=df_b)
+plt.plot('epochs', 'val_acc', data=df_b)
+plt.title('Accuracy and Loss for Model 3')
+plt.xlabel('epochs')
+plt.ylabel('accuracy / loss')
+plt.legend(labels=legend_lb, loc=5, bbox_to_anchor=(1.45, 0.5))
+plt.tight_layout(rect=[0,0,1.25,1])
+plt.show()
+
