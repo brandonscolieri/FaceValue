@@ -29,12 +29,16 @@ In our third iteration, we noted the severe imbalance of the number of photos be
 
 ## Visualizations (John and Brandon)
 
+![First model iteration accuracy](images/model-iteration1.png)
 Figure 1. Accuracies for our basic model for the first 100 epochs. Notice how validation accuracy tends to hover around 25% after 20 epochs. Training accuracy continues to rise, indicating clear overfitting.
 
+![Second model iteration accuracy](images/model-iteration2.png)
 Figure 2. Accuracies for the second model for the first 25 epochs, approaching 30% validation accuracy. While we have not shown all epochs, already we notice plateauing in validation accuracy.
 
+![Second and third model iterations architecture](images/model-arch-iteration2.jpg)
 Figure 3. An overview of our architecture for the second and third iterations. Blue rectangular prisms represent regular convolutional layers.
 
+![Sample downsized images](images/sample-images.png)
 Figure 4. Examples of preprocessed images, scaled down to 32x32 pixels.
 ## Challenges/What went wrong and why
 The first challenge we encountered in pursuing our project was the time to download, extract and upload the data. Doing so took longer than we expected, which delayed the amount of time and resources left for processing and training our models. Another challenge that our team faced was Google Colab’s RAM limitation. This limited the number of epochs we could run and the number of steps per epoch that we could use. 
