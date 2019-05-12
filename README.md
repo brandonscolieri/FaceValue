@@ -1,4 +1,4 @@
-# CS 182 Final Paper 
+# Facial Expression Recognition Using Deep Learning 
 Divya Periyakoil, Isabella Maceda, John Xinyu Lin, Brandon Scolieri
 
 ## Abstract
