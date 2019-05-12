@@ -19,7 +19,7 @@ The AffectNet imagesphotos were accompanied by CSVcsv files containing the file 
 Given our memory limitations Next, we had to preprocess the images to make them of uniform size, and of dimensions that could be handled withigiven our memory limitations. Our dataset consistsconsisted of over 400,000 images, so we also had to account for the computation time of preprocessing the images. We used PIL (Python Image Library) to resize each of the images to dimensions 32x32. We then converted each image into a tensor of dimensions 32x32x3, with 32x32 representing the dimensions of the image, and 3 representing the number of color channels. We used multithreading to ameliorate the preprocessing time.
 
 ![Sample downsized images](images/sample-images.png)
-Figure 1. Examples of preprocessed images, scaled down to 32x32 pixels.
+*Figure 1. Examples of preprocessed images, scaled down to 32x32 pixels.*
 
 The AffectNet dataset also included ResNeXt (aggregated residual) networks for annotating images under the categorical model (with the 11 aforementioned categories) and the valence and arousal model; these models were used to automatically annotate the remaining 550,000 plus images (which we did not use). We took inspiration from their categorical model when coming up with our own model, but otherwise did not base our model off their architecture. However, we did train their model, with slight modifications, for comparison purposes, which we describe in our concluding discussion.
 
@@ -30,24 +30,24 @@ WIn the process of creating our final model, we created over 10 different models
 The first model we triedapplied was a simplesimplistic convolutional neural network comprised of convolutions of sizesized 32, 64, 128 and 256; max pooling; and a dense layer of dimension 512. We noticed that the model was severely overfitting ourthe data, which was made evident fromby our high training accuracy and low validation accuracy. After approximately 15 to 20 epochs, the validation accuracy plateaued at around 25%. 
 
 ![First model iteration accuracy](images/model-iteration1-loss.png)
-Figure 2. Losses for our basic model for the first 100 epochs. While training loss continues to go down, validation loss does not.
+*Figure 2. Losses for our basic model for the first 100 epochs. While training loss continues to go down, validation loss does not.*
 
 ![First model iteration accuracy](images/model-iteration1.png)
-Figure 3. Accuracies for our basic model for the first 100 epochs. Notice how validation accuracy tends to hover around 25% after 20 epochs. Training accuracy continues to rise, indicating clear overfitting.
+*Figure 3. Accuracies for our basic model for the first 100 epochs. Notice how validation accuracy tends to hover around 25% after 20 epochs. Training accuracy continues to rise, indicating clear overfitting.*
 
 Using the stacked convolution model as our baseline, we augmented this initial model further in our next iteration by adding 5 residual layers of dimension 256 after the convolution stack. Our motivation for adding residual layers was to counter the overfitting we saw in our first benchmark model. Each residual layer consisted of a linear activation, convolutional layers, a ReLUrelu activation, and finallying an addition layer. The input and output sizes were of 128x32x32x256. This improved our validation accuracy to 29.7%. We also attempted to interweave residual and convolutional layers but found that doing so led to increased overfitting. 
 
 ![First model iteration accuracy](images/model-iteration2-loss.png)
-Figure 4. Losses for our second model for the first 25 epochs. Both training and validation losses seem to stabilize, but validation loss shows more variance.
+*Figure 4. Losses for our second model for the first 25 epochs. Both training and validation losses seem to stabilize, but validation loss shows more variance.*
 
 ![Second model iteration accuracy](images/model-iteration2.png)
-Figure 5. Accuracies for the second model for the first 25 epochs, approaching 30% validation accuracy. While we have not shown all epochs, already we notice plateauing in validation accuracy.
+*Figure 5. Accuracies for the second model for the first 25 epochs, approaching 30% validation accuracy. While we have not shown all epochs, already we notice plateauing in validation accuracy.*
 
 In our third iteration, we noted the severe imbalance of the number of photos belonging to each class. For example, the "happy category," with 125,734 images, had nearly 30 times more photos than the "disgust category," which only had 3,676 photos. This presented issues while training the model, as we sampled 5000 images per epoch. Thus, we decided to sample max(5000, all of the images) from each category and make this the training set instead. This made the training set more balanced and fair toward every category in the dataset. As a result, wWe saw a considerable increase in our validation accuracy, to 35.6%. 
 
 
 ![Second and third model iterations architecture](images/model-arch-iteration2.jpg)
-Figure 6. An overview of our architecture for the second and third iterations. Blue rectangular prisms represent regular convolutional layers.
+*Figure 6. An overview of our architecture for the second and third iterations. Blue rectangular prisms represent regular convolutional layers.*
 
 ## Project Challenges
 The first challenge we encountered in pursuing our project was the time to download, extract and upload the data. Doing so took longer than we expected, which delayed the amount of time and resources left for processing and training our models. Another challenge that our team faced was Google Colab’s RAM limitation. This limited the number of epochs we could run and the number of steps per epoch that we could use. 
