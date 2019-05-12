@@ -50,7 +50,8 @@ Our dataset can significantly affect our overall performance. Initially, we had 
 With better computing resources, our model may be promising. Apart from developing our own model, we ran the ResNeXt model provided with the AffectNet dataset, only changing the network's image input size to 32x32x3 (as we have downscaled our images, as mentioned above). Running the model for around 15 epochs gives us a validation accuracy of around 25%, comparable to our first model iteration, and worse than our second and third iterations (respectively around 30% and 35%). The AffectNet documentation states that their ResNeXt model has an average accuracy of 65%; however, that accuracy is over the span of 200 epochs. With more training time and memory, perhaps our model can also reach similar accuracies, if not greater.
 
 ## Team Contributions
-Teammate: Sections contributed | % Contributed
+Teammate: Sections contributed | % Contributed  
+
 Divya Periyakoil: Research, Modeling, Poster, Report, Visualizations | 25%  
 
 Brandon Scolieri: Research, Modeling, Poster, Report, Visualizations | 25%  
