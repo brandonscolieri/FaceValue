@@ -50,12 +50,16 @@ Our dataset can significantly affect our overall performance. Initially, we had 
 With better computing resources, our model may be promising. Apart from developing our own model, we ran the ResNeXt model provided with the AffectNet dataset, only changing the network's image input size to 32x32x3 (as we have downscaled our images, as mentioned above). Running the model for around 15 epochs gives us a validation accuracy of around 25%, comparable to our first model iteration, and worse than our second and third iterations (respectively around 30% and 35%). The AffectNet documentation states that their ResNeXt model has an average accuracy of 65%; however, that accuracy is over the span of 200 epochs. With more training time and memory, perhaps our model can also reach similar accuracies, if not greater.
 
 ## Team Contributions
-John helped draft most of the initial project proposal. While he was not involved as much in the development of our final model, he did provide some overall help in getting data preprocessing to work, as well as helping with Tensorflow. He created all the model graphs from the raw training outputs, and collaborated with Brandon to draft much of the final report. Additionally, he was responsible for training the ResNeXt model that came with AffectNet, so our group had a comparison to gauge our model performances.
+Teammate: Sections contributed | % Contributed
+Divya Periyakoil: Research, Modeling, Poster, Report, Visualizations | 25%
+Brandon Scolieri: Research, Modeling, Poster, Report, Visualizations | 25%
+Isabella Maceda: Research, Modeling, Poster, Report, Visualizations  | 25%
+John Xinyu Lin: Research, Modeling, Poster, Report, Visualizations   | 25%
 
-## Acknowledgements (Divya and Isabella)
+## Acknowledgements
 We would like to acknowledge David Chan, our advising graduate student instructor, for guiding us through  our project. Additionally, we would like to recognize Professor John Canny for teaching the course and givinge us guidance on how to improve our model’s performance, as well as Phillipe Laban, a graduate student instructor, who gave us instrumental advice to improveameliorate our model during our poster session. 
 
-## Bibliography (John and Brandon)
+## Bibliography
 [1] A. Mollahosseini; B. Hasani; M. H. Mahoor, "AffectNet: A Database for Facial Expression, Valence, and Arousal Computing in the Wild," in IEEE Transactions on Affective Computing, 2017.
 
 [2] A. Mollahosseini, D. Chan and M. H. Mahoor, "Going deeper in facial expression recognition using deep neural networks," 2016 IEEE Winter Conference on Applications of Computer Vision (WACV), Lake Placid, NY, 2016, pp. 1-10. doi: 10.1109/WACV.2016.7477450
