@@ -51,10 +51,13 @@ With better computing resources, our model may be promising. Apart from developi
 
 ## Team Contributions
 Teammate: Sections contributed | % Contributed
-Divya Periyakoil: Research, Modeling, Poster, Report, Visualizations | 25%
-Brandon Scolieri: Research, Modeling, Poster, Report, Visualizations | 25%
-Isabella Maceda: Research, Modeling, Poster, Report, Visualizations  | 25%
-John Xinyu Lin: Research, Modeling, Poster, Report, Visualizations   | 25%
+Divya Periyakoil: Research, Modeling, Poster, Report, Visualizations | 25%  
+
+Brandon Scolieri: Research, Modeling, Poster, Report, Visualizations | 25%  
+
+Isabella Maceda: Research, Modeling, Poster, Report, Visualizations  | 25%  
+
+John Xinyu Lin: Research, Modeling, Poster, Report, Visualizations   | 25%  
 
 ## Acknowledgements
 We would like to acknowledge David Chan, our advising graduate student instructor, for guiding us through  our project. Additionally, we would like to recognize Professor John Canny for teaching the course and givinge us guidance on how to improve our model’s performance, as well as Phillipe Laban, a graduate student instructor, who gave us instrumental advice to improveameliorate our model during our poster session. 
