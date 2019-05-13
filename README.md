@@ -12,6 +12,13 @@ Our goal was to design a FER system, using deep learning, that can identify the 
 
 While some models include continuous features such as valence and arousal, which quantify levels of sentiment (i.e. positivity/negativity of an image) and intensity of response (i.e. excitement/calmness of an image) respectively [1], we chose to allow the network to learn these features on its own and focus on categorizing emotions into discrete classes. To measure our performance, we assess model accuracy on held-out validation data.  
 
+## AffectNet and Data Processing  
+
+The original AffectNet dataset is comprised of approximately 1,000,000 in-the-wild facial images that were gathered by querying Google, Bing, and Yahoo using 1,250 emotion related tags in English, Spanish, Portuguese, German, Arabic, and Farsi. About half of the original dataset was manually categorized into the following eleven discrete categories: neutral, happy, sad, surprise, fear, disgust, anger, contempt, none, uncertain, and non-face. The image dimensions vary and as can be seen in the figure below, the distribution of images by category is not uniform.  
+
+Distribution from poster here...
+
+
 ## Methods
 
 To train our model, we wanted to use a large database of facial images, preferably one with diverse, high-quality images. Hence, wWe decided to used the AffectNet dataset, which containsis comprised of approximately 420,000 labeled in-the-wild photos that are classified into the following 11 categories: neutral, happy, sad, surprise, fear, disgust, anger, contempt, none, uncertain, and non-face. The imagesdata were obtained byfrom the AffectNet team searching Google, Bing, and Yahoo for queries in six different languages: English, Spanish, Portuguese, German, Arabic, and Farsi [1]. Out of the 1,000,000 plus images gathered, around 420,000 of them were manually annotated by a team of hired annotators [1].  
