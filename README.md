@@ -57,7 +57,7 @@ The AffectNet dataset also included ResNeXt (aggregated residual) networks for a
 
 ## Results
 
-
+### Model 1
 ![First model iteration accuracy](images/model-iteration1-loss.png)
 *Figure 4. Losses for our basic model for the first 100 epochs. While training loss continues to go down, validation loss does not.*
 
