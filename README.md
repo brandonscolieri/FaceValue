@@ -25,9 +25,11 @@ After obtaining the data, we preprocessed the images to scale them down to unifo
 |------------------------:|---------|---------|-------|----------|-------|---------|--------|----------|--------|-----------|----------|
 | Number of images        | 71,053  | 125,734 | 24658 | 13,512   | 6,211 | 3,676   | 23,872 | 3,530    | 31,769 | 11,286    | 78,751   |
 
+*Figure 1. Distribution of images by category. Total images: 394,052*
+
 
 ![Sample downsized images](images/sample-images.png)
-*Figure 1. Examples of preprocessed images, scaled down to 32x32 pixels.*
+*Figure 2. Examples of preprocessed images, scaled down to 32x32 pixels.*
 
 
 ## Model Architectures
