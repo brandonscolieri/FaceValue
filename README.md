@@ -14,7 +14,7 @@ While some models include continuous features such as valence and arousal, which
 
 ## AffectNet and Data Processing  
 
-The original AffectNet dataset is comprised of approximately 1,000,000 in-the-wild facial images that were gathered by querying Google, Bing, and Yahoo using 1,250 emotion related tags in English, Spanish, Portuguese, German, Arabic, and Farsi. About half of the original dataset was manually categorized into the following eleven discrete categories: neutral, happy, sad, surprise, fear, disgust, anger, contempt, none, uncertain, and non-face. The image dimensions vary and as can be seen in the figure below, the distribution of images by category is not uniform.  
+The original AffectNet dataset is comprised of approximately 1,000,000 in-the-wild facial images that were gathered by querying Google, Bing, and Yahoo using 1,250 emotion related tags in English, Spanish, Portuguese, German, Arabic, and Farsi [1]. About half of the original dataset was manually categorized into the following eleven discrete categories: neutral, happy, sad, surprise, fear, disgust, anger, contempt, none, uncertain, and non-face [1]. The image dimensions vary and as can be seen in the figure below, the distribution of images by category is not uniform.  
 
 Distribution from poster here...
 
