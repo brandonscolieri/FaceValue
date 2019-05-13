@@ -29,6 +29,7 @@ After obtaining the data, we preprocessed the images to scale them down to unifo
 
 
 ![Sample downsized images](images/sample-images.png)
+
 *Figure 2. Examples of preprocessed images, scaled down to 32x32 pixels.*
 
 
@@ -39,7 +40,7 @@ In the process of creating our final model, we created over 10 different models.
 1.	The first model we applied was a simplistic convolutional neural network comprised of convolutions of sized 32, 64, 128 and 256; max pooling; and a dense layer of dimension 512. We noticed that the model was severely overfitting the data, which was made evident by our high training accuracy and low validation accuracy. After approximately 15 to 20 epochs the validation accuracy plateaued at around 25%.  
 
 
-![First model iteration architecture](more-imgs/model-iter1.jpg)
+*![First model iteration architecture](more-imgs/model-iter1.jpg)
 *Figure 2. An overview of our architecture for the second and third iterations. Blue rectangular prisms represent regular convolutional layers.*
 
 2.	Using the stacked convolution model as our baseline we augmented this initial model further in our next iteration by adding 5 residual layers of dimension 256 after the convolution stack. Our motivation for adding residual layers was to counter the overfitting we saw in our first benchmark model. Each residual layer consisted of a linear activation, convolutional layers, a relu activation, and an addition layer. The input and output sizes were of 128x32x32x256. This improved our validation accuracy to 29.7%. We also attempted to interweave residual and convolutional layers but found that led to increased overfitting.  
