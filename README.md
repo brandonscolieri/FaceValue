@@ -26,6 +26,10 @@ After obtaining the data, we preprocessed the images to scale them down to unifo
 | Number of images        | 71,053  | 125,734 | 24658 | 13,512   | 6,211 | 3,676   | 23,872 | 3,530    | 31,769 | 11,286    | 78,751   |
 
 
+![Sample downsized images](images/sample-images.png)
+*Figure 1. Examples of preprocessed images, scaled down to 32x32 pixels.*
+
+
 ## Model Architectures
 
 In the process of creating our final model, we created over 10 different models. The models below show the progression of how we tweaked the intermediate models and arrived at our final model. Each model used a batch size of 128 and had an input shape of 128x32x32x3.  
@@ -36,9 +40,8 @@ In the process of creating our final model, we created over 10 different models.
 
 3.	In our third iteration, we noted the severe imbalance of the number of photos belonging to each class. For example, the happy category had nearly 30 times more photos than the disgust category. This presented issues while training the model, as we sampled 5000 images per epoch. Thus, we decided to sample max(10,000, all of the images) from each category and make this the training set instead. This made the training set more balanced and fair toward every category in the dataset. We also centered our images (normalized them) and we saw a considerable increase in our validation accuracy, to 36.32%. 
 
-
-![Sample downsized images](images/sample-images.png)
-*Figure 1. Examples of preprocessed images, scaled down to 32x32 pixels.*
+![Second and third model iterations architecture](images/model-arch-iteration2.jpg)
+*Figure 4. An overview of our architecture for the second and third iterations. Blue rectangular prisms represent regular convolutional layers.*
 
 The AffectNet dataset also included ResNeXt (aggregated residual) networks for annotating images under the categorical model (with the 11 aforementioned categories) and the valence and arousal model; these models were used to automatically annotate the remaining 550,000 plus images (which we did not use). We took inspiration from their categorical model when coming up with our own model, but otherwise did not base our model off their architecture. However, we did train their model, with slight modifications, for comparison purposes, which we describe in our concluding discussion.
 
@@ -64,9 +67,6 @@ Using the stacked convolution model as our baseline, we augmented this initial m
 
 In our third iteration, we noted the severe imbalance of the number of photos belonging to each class. For example, the "happy category," with 125,734 images, had nearly 30 times more photos than the "disgust category," which only had 3,676 photos. This presented issues while training the model, as we sampled 5000 images per epoch. Thus, we decided to sample max(5000, all of the images) from each category and make this the training set instead. This made the training set more balanced and fair toward every category in the dataset. As a result, wWe saw a considerable increase in our validation accuracy, to 35.6%. 
 
-
-![Second and third model iterations architecture](images/model-arch-iteration2.jpg)
-*Figure 6. An overview of our architecture for the second and third iterations. Blue rectangular prisms represent regular convolutional layers.*
 
 ## Project Challenges
 The first challenge we encountered in pursuing our project was the time to download, extract and upload the data. Doing so took longer than we expected, which delayed the amount of time and resources left for processing and training our models. Another challenge that our team faced was Google Colab’s RAM limitation. This limited the number of epochs we could run and the number of steps per epoch that we could use. 
