@@ -18,6 +18,10 @@ The original AffectNet dataset is comprised of approximately 1,000,000 in-the-wi
 
 Distribution from poster here...
 
+| Labeled Affect Category | Neutral | Happy   | Sad   | Surprise | Fear  | Disgust | Anger  | Contempt | None   | Uncertain | Non-face |
+|------------------------:|---------|---------|-------|----------|-------|---------|--------|----------|--------|-----------|----------|
+| Number of images        | 71,053  | 125,734 | 24658 | 13,512   | 6,211 | 3,676   | 23,872 | 3,530    | 31,769 | 11,286    | 78,751   |
+
 
 ## Methods
 
