@@ -44,7 +44,8 @@ In the process of creating our final model, we created over 10 different models.
 
 3.	In our third iteration, we noted the severe imbalance of the number of photos belonging to each class. For example, the happy category had nearly 30 times more photos than the disgust category. This presented issues while training the model, as we sampled 5000 images per epoch. Thus, we decided to sample max(10,000, all of the images) from each category and make this the training set instead. This made the training set more balanced and fair toward every category in the dataset. We also centered our images (normalized them) and we saw a considerable increase in our validation accuracy, to 36.32%. 
 
-![Second and third model iterations architecture](more-images/model3.jpg)
+![Second and third model iterations architecture](more-images/model3.jpg)  
+
 *Figure 2. An overview of our architecture for the second and third iterations. Blue rectangular prisms represent regular convolutional layers.*
 
 The AffectNet dataset also included ResNeXt (aggregated residual) networks for annotating images under the categorical model (with the 11 aforementioned categories) and the valence and arousal model; these models were used to automatically annotate the remaining 550,000 plus images (which we did not use). We took inspiration from their categorical model when coming up with our own model, but otherwise did not base our model off their architecture. However, we did train their model, with slight modifications, for comparison purposes, which we describe in our concluding discussion.
