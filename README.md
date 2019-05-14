@@ -76,12 +76,12 @@ The AffectNet team used a ResNeXt model for labeling the remaining images that w
 *Figure 7. Accuracies for the second model for the first 25 epochs, approaching 30% validation accuracy. While we have not shown all epochs, already we notice plateauing in validation accuracy.*  
 
 
-#### Loss, Training, and Validation Accuracies of Model 3 ####  {align=center}
+#### Loss, Training, and Validation Accuracies of Model 3 ####   <p align="center">
 
 
 
 
-## Project Challenges and Lessons Learned
+## Project Challenges and Takeaways
 As with any ambitious project, the challenges are often numerous and novel, and our project was no different. The very first obstacle we encountered was Google Drive’s upload speeds. Although using Google Drive to house our data was free, the upload time associated with this service nearly rendered it entirely unfeasible for a dataset of our size. Another challenge that our team faced was Google Collaboratory’s RAM limitation. This limited the number of epochs we could run, the number of steps per epoch that we could use, the image size we could train on, and effectively lowered the amount of deep experimentation we could perform. Overall we concluded that when it comes to a project of this caliber, having access to reliable GPU resources for hardware acceleration would have a significant impact on the project as a whole. Aside from resource limitations, we frequently ran into the challenge of counteracting overfitting. One example of a correction we made to our code happened when we found that one of our worst performing models contained a ReLU activation at the end. This effectively made our gradients vanish for all negative inputs and produced an inordinate amount of overfitting.
 
 ## Moving Forward
