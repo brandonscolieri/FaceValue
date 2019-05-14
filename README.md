@@ -54,7 +54,7 @@ In the process of creating our most successful solution, we created over 10 diff
 
 ### Experimentation Notes  
 
-The AffectNet dataset also included ResNeXt (aggregated residual) networks for annotating images under the categorical model (with the 11 aforementioned categories) and the valence and arousal model; these models were used to automatically annotate the remaining 550,000 plus images (which we did not use). We took inspiration from their categorical model when coming up with our own model, but otherwise did not base our model off their architecture. However, we did train their model, with slight modifications, for comparison purposes, which we describe in our concluding discussion.
+The AffectNet team used a ResNeXt model for labeling the remaining images that were not manually annotated. To ensure that we were training on the most accurate data we did not use the images labeled by ResNeXt; however, we did run some preliminary experiments using a modified version of ResNeXt. Our modifications included altering the acceptable input dimensions to 32x32, adding additional batch normalization, adding dropout to help counteract overfitting, adding an RMSProp optimizer, and tuning various hyperparameters such as the learning and decay rates. Ultimately this model required computational resources that were beyond the scope of the free resources we were using and we frequently ran into timeout issues resulting from surpassing Google Collaboratory’s RAM limitations. This limited experimentation with this model and we opted to create an approach of our own instead of pursuing further development of the ResNeXt model.  
 
 
 ## Results
