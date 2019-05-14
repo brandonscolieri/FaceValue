@@ -16,7 +16,7 @@ While some models include continuous features such as valence and arousal, which
 
 The original AffectNet dataset is comprised of approximately 1,000,000 in-the-wild facial images that were gathered by querying Google, Bing, and Yahoo using 1,250 emotion related tags in English, Spanish, Portuguese, German, Arabic, and Farsi. About half of the original dataset was manually categorized into the following eleven discrete categories: neutral, happy, sad, surprise, fear, disgust, anger, contempt, none, uncertain, and non-face. The data was obtained directly from the AffectNet team. The image dimensions vary and the distribution of images by category is not uniform. In addition, the dataset contained .csv files that describe the file path, class label, and some information that was not used for this project such as, valence and arousal. 
 
-Due to computational limitations we used a manually labeled subset of approximately 394,000 facial images, which were sampled from the complete AffectNet dataset. The labels from the manually annotated images served as the ground truth for our models. For housing the data we decided to use Google Drive since it provided sufficient storage capacity for free. Since we were housing the data using Google Drive we used Google Collaboratory’s access to free GPU resources as a means for performing and accelerating the training computation. We found that there are significant drawbacks to using both of these free services, which will be elaborated on in the *Lesssons Learned* section.  
+Due to computational limitations we used a manually labeled subset of approximately 394,000 facial images, which were sampled from the complete AffectNet dataset. The labels from the manually annotated images served as the ground truth for our models. For housing the data we decided to use Google Drive since it provided sufficient storage capacity for free. Since we were housing the data using Google Drive we used Google Collaboratory’s access to free GPU resources as a means for performing and accelerating the training computation. We found that there are significant drawbacks to using both of these free services, which will be elaborated on in the *Project Challenges and Takeaways* section.  
  
 After obtaining the data, we preprocessed the images to scale them down to uniform dimensions that were within the parameters of the memory limitations imposed by Google Collaboratory. Despite using only a fraction of the dataset, with over 394,000 images we still had to account for the computation time required to preprocess the images. To complete the preprocessing phase we used the Python Image Library (PIL) to resize each of the images to dimensions of 32x32. Following that, each image was converted into a tensor of dimensions 32x32x3, where 32x32 represents the image dimensions in pixels, and 3 represents the number of color channels. We utilized multithreading to ameliorate the preprocessing time.
 
@@ -59,7 +59,7 @@ The AffectNet team used a ResNeXt model for labeling the remaining images that w
 
 ## Results
 
-#### Loss, Training, and Validation Accuracies of Model 1 ####
+#### Loss and Accuracy on Training and Validation Sets for Model 1 ####
 ![First model iteration accuracy](images/model-iteration1-loss.png)
 *Figure 4. Losses for our basic model for the first 100 epochs. While training loss continues to go down, validation loss does not.*
 
@@ -67,7 +67,7 @@ The AffectNet team used a ResNeXt model for labeling the remaining images that w
 *Figure 5. Accuracies for our basic model for the first 100 epochs. Notice how validation accuracy tends to hover around 25% after 20 epochs. Training accuracy continues to rise, indicating clear overfitting.* 
 
 
-#### Loss, Training, and Validation Accuracies of Model 2 ####
+#### Loss and Accuracy on Training and Validation Sets for Model 2 ####
 ![First model iteration accuracy](images/model-iteration2-loss.png)
 *Figure 6. Losses for our second model for the first 25 epochs. Both training and validation losses seem to stabilize, but validation loss shows more variance.*
 
@@ -75,7 +75,7 @@ The AffectNet team used a ResNeXt model for labeling the remaining images that w
 *Figure 7. Accuracies for the second model for the first 25 epochs, approaching 30% validation accuracy. While we have not shown all epochs, already we notice plateauing in validation accuracy.*  
 
 
-#### Loss, Training, and Validation Accuracies of Model 3  
+#### Loss and Accuracy on Training and Validation Sets for Model 3  
 
 
 
