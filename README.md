@@ -30,7 +30,6 @@ After obtaining the data, we preprocessed the images to scale them down to unifo
 
 
 ![Sample downsized images](images/sample-images.png)
-
 *Figure 2. Examples of preprocessed images, scaled down to 32x32 pixels.*
 
 
@@ -61,26 +60,26 @@ The AffectNet team used a ResNeXt model for labeling the remaining images that w
 
 #### Loss and Accuracy on Training and Validation Sets for Model 1 ####
 ![First model iteration accuracy](images/model-iteration1-loss.png)
-*Figure 4. Losses for our basic model for the first 100 epochs. While training loss continues to go down, validation loss does not.*
+*Figure 5. Losses for our basic model for the first 100 epochs. While training loss continues to go down, validation loss does not.*
 
 ![First model iteration accuracy](images/model-iteration1.png)
-*Figure 5. Accuracies for our basic model for the first 100 epochs. Notice how validation accuracy tends to hover around 25% after 20 epochs. Training accuracy continues to rise, indicating clear overfitting.* 
+*Figure 6. Accuracies for our basic model for the first 100 epochs. Notice how validation accuracy tends to hover around 25% after 20 epochs. Training accuracy continues to rise, indicating clear overfitting.* 
 
 
 #### Loss and Accuracy on Training and Validation Sets for Model 2 ####
 ![First model iteration accuracy](images/model-iteration2-loss.png)
-*Figure 6. Losses for our second model for the first 25 epochs. Both training and validation losses seem to stabilize, but validation loss shows more variance.*
+*Figure 7. Losses for our second model for the first 25 epochs. Both training and validation losses seem to stabilize, but validation loss shows more variance.*
 
 ![Second model iteration accuracy](images/model-iteration2.png)
-*Figure 7. Accuracies for the second model for the first 25 epochs, approaching 30% validation accuracy. While we have not shown all epochs, already we notice plateauing in validation accuracy.*  
+*Figure 8. Accuracies for the second model for the first 25 epochs, approaching 30% validation accuracy. While we have not shown all epochs, already we notice plateauing in validation accuracy.*  
 
 
 #### Loss and Accuracy on Training and Validation Sets for Model 3  
 ![First model iteration accuracy](images/model-iteration3-loss.png)
-*Figure 8. Losses for our third model for 10 epochs.*
+*Figure 9. Losses for our third model for 10 epochs.*
 
 ![Second model iteration accuracy](images/model-iteration3.png)
-*Figure 9. Accuracies for the third model for 10 epochs.*  
+*Figure 10. Accuracies for the third model for 10 epochs.*  
 
 
 
