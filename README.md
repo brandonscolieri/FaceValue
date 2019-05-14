@@ -37,7 +37,8 @@ After obtaining the data, we preprocessed the images to scale them down to unifo
 
 In the process of creating our most successful solution, we created over 10 different models. In order to illustrate the progression of our work the models below were selected to represent our baseline, intermediate, and final model. Each model used a batch size of 128, had an input shape of 128x32x32x3, and was evaluated by computing the categorical cross-entropy loss.
 
-![Cross-entropy](more-imgs/cross-entropy.jpg)
+![Cross-entropy](more-imgs/cross-entropy.jpg)  
+
 *Figure 3. General cross-entropy loss equation.*
 
 1.	The first model we created was a simplistic convolutional neural network comprised of convolutions with sizes 32, 64, 128 and 256; max pooling; and a dense layer of dimension 256. We noticed that the model was severely overfitting the data, which was made evident by our high training accuracy and low validation accuracy. After approximately 15 to 20 epochs the validation accuracy plateaued at around 25%.  
