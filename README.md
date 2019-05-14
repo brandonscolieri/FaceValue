@@ -109,7 +109,7 @@ Isabella Maceda: Research, Modeling, Poster, Report, Visualizations  | 25%
 John Xinyu Lin: Research, Modeling, Poster, Report, Visualizations   | 25%  
 
 ## Acknowledgements
-We would like to acknowledge David Chan, our advising graduate student instructor, for guiding us through  our project. Additionally, we would like to recognize Professor John Canny for teaching the course and givinge us guidance on how to improve our model’s performance, as well as Phillipe Laban, a graduate student instructor, who gave us instrumental advice to improveameliorate our model during our poster session. 
+We would like to acknowledge David Chan, our advising graduate student instructor, for guiding us throughout our project. Additionally, we would like to recognize Professor John Canny for teaching the course and giving us guidance on how to improve our model’s performance, as well as Phillipe Laban, a graduate student instructor, who gave us instrumental advice to ameliorate our model during our poster session. We would also like to thank the AffectNet team for allowing us access to their dataset so that we could work on this project. 
 
 ## Bibliography
 [1] A. Mollahosseini; B. Hasani; M. H. Mahoor, "AffectNet: A Database for Facial Expression, Valence, and Arousal Computing in the Wild," in IEEE Transactions on Affective Computing, 2017.
