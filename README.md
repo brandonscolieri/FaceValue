@@ -75,8 +75,9 @@ The AffectNet team used a ResNeXt model for labeling the remaining images that w
 ![Second model iteration accuracy](images/model-iteration2.png)
 *Figure 7. Accuracies for the second model for the first 25 epochs, approaching 30% validation accuracy. While we have not shown all epochs, already we notice plateauing in validation accuracy.*  
 
-
-#### Loss, Training, and Validation Accuracies of Model 3 <p align="center">
+<p align="justify">
+#### Loss, Training, and Validation Accuracies of Model 3
+</p>
 
 
 
