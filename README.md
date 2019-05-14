@@ -42,14 +42,14 @@ In the process of creating our most successful solution, we created over 10 diff
 
 
     ![First model iteration architecture](more-imgs/model-iter1.jpg)
-    Figure 3. An overview of our architecture for the first iteration. Blue rectangular prisms represent regular convolutional layers.*
+    *Figure 3. An overview of our architecture for the first iteration. Blue rectangular prisms represent regular convolutional layers.*
 
 2.	Using the stacked convolution model as our baseline we augmented this initial model further in our next iteration by adding 5 residual layers of dimension 256 after the convolution stack. Our motivation for adding residual layers was to counter the overfitting we saw in our initial model. Each residual layer consisted of a linear activation, convolutional layers, a ReLU activation, and a summation layer. The input and output sizes were of 128x32x32x256. This raised our validation accuracy to 29.7%. We also attempted to interweave residual and convolutional layers, but found that this approach led to increased overfitting.  
 
 3.	In our third iteration, we corrected the severe imbalance of the number of photos belonging to each class. For example, the happy category had nearly 30 times more photos than the disgust category. This presented issues while training the model, as we sampled 5000 images per epoch. Thus, in order to balance the training set we decided to sample max(10,000, all of the images) from each category and use this as our new training set. In addition, we normalized our images (centered them) and upon testing saw a considerable increase in our validation accuracy, to 36.32%. 
 
     ![Second and third model iterations architecture](more-imgs/model3.jpg)
-    *Figure 2. An overview of our architecture for the second and third iterations. Blue rectangular prisms represent regular convolutional layers.*
+    *Figure 4. An overview of our architecture for the second and third iterations. Blue rectangular prisms represent regular convolutional layers.*
 
 
 ### Experimentation Notes  
@@ -76,7 +76,11 @@ The AffectNet team used a ResNeXt model for labeling the remaining images that w
 
 
 #### Loss and Accuracy on Training and Validation Sets for Model 3  
+![First model iteration accuracy](images/model-iteration3-loss.png)
+*Figure 8. Losses for our third model for 10 epochs.*
 
+![Second model iteration accuracy](images/model-iteration3.png)
+*Figure 9. Accuracies for the third model for 10 epochs.*  
 
 
 
