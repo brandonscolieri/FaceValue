@@ -39,16 +39,18 @@ In the process of creating our most successful solution, we created over 10 diff
 
 1.	The first model we created was a simplistic convolutional neural network comprised of convolutions with sizes 32, 64, 128 and 256; max pooling; and a dense layer of dimension 256. We noticed that the model was severely overfitting the data, which was made evident by our high training accuracy and low validation accuracy. After approximately 15 to 20 epochs the validation accuracy plateaued at around 25%.  
 
-
     ![First model iteration architecture](more-imgs/model-iter1.jpg)
     *Figure 3. An overview of our architecture for the first iteration. Blue rectangular prisms represent regular convolutional layers.*
 
-2.	Using the stacked convolution model as our baseline we augmented this initial model further in our next iteration by adding 5 residual layers of dimension 256 after the convolution stack. Our motivation for adding residual layers was to counter the overfitting we saw in our initial model. Each residual layer consisted of a linear activation, convolutional layers, a ReLU activation, and a summation layer. The input and output sizes were of 128x32x32x256. This raised our validation accuracy to 29.7%. We also attempted to interweave residual and convolutional layers, but found that this approach led to increased overfitting.  
+2.	Using the stacked convolution model as our baseline we augmented this initial model further in our next iteration by adding 5 residual layers of dimension 256 after the convolution stack. Our motivation for adding residual layers was to counter the overfitting we saw in our initial model. Each residual layer consisted of a linear activation, convolutional layers, a ReLU activation, and a summation layer. The input and output sizes were of 128x32x32x256. This raised our validation accuracy to 29.7%. We also attempted to interweave residual and convolutional layers, but found that this approach led to increased overfitting.
+
+	![Residual layer](more-imgs/residual.jpg)
+    *Figure 4. An overview of our residual layer.*
 
 3.	In our third iteration, we corrected the severe imbalance of the number of photos belonging to each class. For example, the happy category had nearly 30 times more photos than the disgust category. This presented issues while training the model, as we sampled 5000 images per epoch. Thus, in order to balance the training set we decided to sample max(10,000, all of the images) from each category and use this as our new training set. In addition, we normalized our images (centered them) and upon testing saw a considerable increase in our validation accuracy, to 36.32%. 
 
     ![Second and third model iterations architecture](more-imgs/model3.jpg)
-    *Figure 4. An overview of our architecture for the second and third iterations. Blue rectangular prisms represent regular convolutional layers.*
+    *Figure 5. An overview of our architecture for the second and third iterations. Blue rectangular prisms represent regular convolutional layers.*
 
 
 ### Experimentation Notes  
@@ -60,26 +62,26 @@ The AffectNet team used a ResNeXt model for labeling the remaining images that w
 
 #### Loss and Accuracy on Training and Validation Sets for Model 1 ####
 ![First model iteration accuracy](images/model-iteration1-loss.png)
-*Figure 5. Losses for our basic model for the first 100 epochs. While training loss continues to go down, validation loss does not.*
+*Figure 6. Losses for our basic model for the first 100 epochs. While training loss continues to go down, validation loss does not.*
 
 ![First model iteration accuracy](images/model-iteration1.png)
-*Figure 6. Accuracies for our basic model for the first 100 epochs. Notice how validation accuracy tends to hover around 25% after 20 epochs. Training accuracy continues to rise, indicating clear overfitting.* 
+*Figure 7. Accuracies for our basic model for the first 100 epochs. Notice how validation accuracy tends to hover around 25% after 20 epochs. Training accuracy continues to rise, indicating clear overfitting.* 
 
 
 #### Loss and Accuracy on Training and Validation Sets for Model 2 ####
 ![First model iteration accuracy](images/model-iteration2-loss.png)
-*Figure 7. Losses for our second model for the first 25 epochs. Both training and validation losses seem to stabilize, but validation loss shows more variance.*
+*Figure 8. Losses for our second model for the first 25 epochs. Both training and validation losses seem to stabilize, but validation loss shows more variance.*
 
 ![Second model iteration accuracy](images/model-iteration2.png)
-*Figure 8. Accuracies for the second model for the first 25 epochs, approaching 30% validation accuracy. While we have not shown all epochs, already we notice plateauing in validation accuracy.*  
+*Figure 9. Accuracies for the second model for the first 25 epochs, approaching 30% validation accuracy. While we have not shown all epochs, already we notice plateauing in validation accuracy.*  
 
 
 #### Loss and Accuracy on Training and Validation Sets for Model 3  
 ![First model iteration accuracy](images/model-iteration3-loss.png)
-*Figure 9. Losses for our third model for 10 epochs.*
+*Figure 10. Losses for our third model for 10 epochs.*
 
 ![Second model iteration accuracy](images/model-iteration3.png)
-*Figure 10. Accuracies for the third model for 10 epochs.*  
+*Figure 11. Accuracies for the third model for 10 epochs.*  
 
 
 
